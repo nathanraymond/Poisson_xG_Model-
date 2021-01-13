@@ -42,8 +42,8 @@ class PoissonModel():
 		elif (self.probability).lower() == 'draw':
 			return sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] == combs[i][1])
 		elif (self.probability).lower() == 'all':
-			return sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] == combs[i][1]), sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] >= combs[i][1]), sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] <= combs[i][1])
+			return 1/sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] > combs[i][1]), 1/sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] == combs[i][1]), 1/sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] < combs[i][1])
 		
 
 
-print(PoissonModel(1.23, 0.997, 'all').get_match_probability())
+print(PoissonModel(1.449675175, 0.58519325, 'draw').get_match_probability())

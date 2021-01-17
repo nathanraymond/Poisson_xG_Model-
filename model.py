@@ -46,4 +46,4 @@ class PoissonModel():
 		
 
 
-print(PoissonModel(1.449675175, 0.58519325, 'draw').get_match_probability())
+print(PoissonModel(1.1864, 2.0734, 'home').get_match_probability())

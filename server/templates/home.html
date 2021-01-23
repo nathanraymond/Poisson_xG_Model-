@@ -10,14 +10,22 @@
     <title></title>
   </head>
   <body>
-    <h1>Test</h1>
+    <h1 >Poission</h1>
     <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" id="name">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="submit_entry();">Button</button>
+      <div class="form-goup">
+        <label>Home</label>
+        <input type="number" class="form-control" id="home" placeholder="gimi">
+      </div>
+      <div class="form-group">
+        <label>Away</label>
+        <input type="number" class="form-control" id="away" placeholder="gimi2">
+        <button class="btn btn-primary" onclick="submit_entry();">click me lol</button>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </body>
 </html>
+
 {% endblock %}
 
 {% block script %}
@@ -26,10 +34,12 @@
   
   function submit_entry(){
 
-    var name = document.getElementById("name")
+    var home = document.getElementById("home")
+    var away = document.getElementById("away");
 
     var entry = {
-      name: name.value
+      home: home.value,
+      away: away.value
     };
     fetch('/create-entry',{
       method: "POST",

@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request, render_template, url_for, send_from_directory, make_response
 from flask_bootstrap import Bootstrap
+from model import PoissonModel
 
 
 app = Flask(__name__)
@@ -13,7 +14,11 @@ def create_entry():
 
 	req = request.get_json()
 
-	res = make_response(jsonify(req), 200)
+	print(req)
+
+	out = PoissonModel(req, 'all').get_match_probability()
+
+	res = make_response(jsonify(out), 200)
 
 	return res
 

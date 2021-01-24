@@ -7,20 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
     <title></title>
   </head>
   <body>
-    <h1 >Poission</h1>
+    <h1 >Poisson</h1>
     <div class="input-group mb-3">
       <div class="form-goup">
-        <label>Home</label>
+        <label>Home λ</label>
         <input type="number" class="form-control" id="home" placeholder="gimi">
       </div>
       <div class="form-group">
-        <label>Away</label>
+        <label>Away λ</label>
         <input type="number" class="form-control" id="away" placeholder="gimi2">
         <button class="btn btn-primary" onclick="submit_entry();">click me lol</button>
       </div>
+      <p id="home-output"></p>
+      <p id="draw-output"></p>
+      <p id="away-output"></p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </body>
@@ -53,6 +57,11 @@
 
     .then(function (response){
       response.json().then(function(data){
+
+        document.getElementById("home-output").innerHTML = "Home: "+ data.home;
+        document.getElementById("draw-output").innerHTML = "Draw: " + data.draw;
+        document.getElementById("away-output").innerHTML = "Away: " + data.away;
+
 
         console.log(data)
 

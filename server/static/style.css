@@ -1,0 +1,31 @@
+body{
+	background: #efefef;
+}
+
+p {
+  margin-top: 1.5rem;
+}
+
+#home-output{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-collapse: separate;
+    border-spacing: 15px;
+    margin-left: 1.5rem;
+}
+
+
+#draw-output{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1px;
+    margin-left: 1.5rem;
+}
+
+#away-output{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1px;
+    margin-left: 1.5rem;
+}

@@ -72,9 +72,9 @@
     .then(function (response){
       response.json().then(function(data){
 
-        document.getElementById("home-output").innerHTML = "Home: "+ (data.home*100).toFixed(2)+"% calculated chance, "+(1/data.home).toFixed(2)+" decimal odds";
-        document.getElementById("draw-output").innerHTML = "Draw: " + (data.draw*100).toFixed(2)+"% calculated chance, "+(1/data.draw).toFixed(2)+" decimal odds";
-        document.getElementById("away-output").innerHTML = "Away: " + (data.away*100).toFixed(2)+"% calculated chance, "+(1/data.away).toFixed(2)+" decimal odds";
+        document.getElementById("home-output").innerHTML = "Home: "+ (data.home*100).toFixed(2)+"% calculated chance, "+(1/data.home).toFixed(2)+" decimal odds.";
+        document.getElementById("draw-output").innerHTML = "Draw: " + (data.draw*100).toFixed(2)+"% calculated chance, "+(1/data.draw).toFixed(2)+" decimal odds.";
+        document.getElementById("away-output").innerHTML = "Away: " + (data.away*100).toFixed(2)+"% calculated chance, "+(1/data.away).toFixed(2)+" decimal odds.";
 
         console.log(data)
 

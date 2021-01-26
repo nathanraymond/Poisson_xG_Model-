@@ -42,6 +42,6 @@ class PoissonModel():
 		elif (self.probability).lower() == 'draw':
 			return sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] == combs[i][1])
 		elif (self.probability).lower() == 'all':
-			return {"home": 1/sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] > combs[i][1]), "draw": 1/sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] == combs[i][1]), "away": 1/sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] < combs[i][1])}
+			return {"home": sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] > combs[i][1]), "draw": sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] == combs[i][1]), "away": sum((self.get_probabilty_df()).loc[combs[i]] for i in range (0, len(combs)) if combs[i][0] < combs[i][1])}
 		
 

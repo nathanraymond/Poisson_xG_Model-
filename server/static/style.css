@@ -2,30 +2,42 @@ body{
 	background: #efefef;
 }
 
-p {
-  margin-top: 1.5rem;
+
+#odds{
+	margin-top: 1rem;
+}
+
+#math {
+  text-align: center;
+  font-size: 15px;
+}
+
+h1{
+	text-align: center;
+}
+
+#away-input{
+	margin-top: 0.7rem;
 }
 
 #home-output{
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 5px;
-    border-collapse: separate;
-    border-spacing: 15px;
-    margin-left: 1.5rem;
+   font-size: 20px;
 }
 
 
 #draw-output{
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 1px;
-    margin-left: 1.5rem;
+    font-size: 20px;
 }
 
 #away-output{
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 1px;
-    margin-left: 1.5rem;
+    font-size: 20px;
 }
+
+#input-lot{
+	margin-top: 1rem;
+}
+
+#thebutton{
+	margin-top: 1rem;
+}
+

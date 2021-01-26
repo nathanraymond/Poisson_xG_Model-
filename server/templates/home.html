@@ -11,21 +11,35 @@
     <title></title>
   </head>
   <body>
-    <h1 >Poisson</h1>
-    <div class="input-group mb-3">
-      <div class="form-goup">
-        <label>Home λ</label>
-        <input type="number" class="form-control" id="home" placeholder="gimi">
-      </div>
-      <div class="form-group">
-        <label>Away λ</label>
-        <input type="number" class="form-control" id="away" placeholder="gimi2">
-        <button class="btn btn-primary" onclick="submit_entry();">click me lol</button>
-      </div>
-      <p id="home-output"></p>
-      <p id="draw-output"></p>
-      <p id="away-output"></p>
+    <h1 >Poisson distribution - Football prediction model</h1>
+
+    <div id="math">   
+      <math>
+        p(x;λ) = <box> e<sub>−λ</sub> <box>λ<sup>x</sup>/<over>x! <box> for x(Goals)=0,1,2,3,5
+      </math>
     </div>
+
+    <div class="w3-container" id="odds">
+      <h1 id="home-output">Home: 0.00%, 0.00</h1>
+      <h1 id="draw-output">Draw:  0.00%, 0.00</h1>
+      <h1 id="away-output">Away: 0.00%, 0.00</h1>  
+    </div>
+
+    <div class="text-center" id="input-lot">
+      <div class="form-goup">
+        <label>Home</label>
+        <input type="number" class="form-control" id="home" placeholder="Home team expected xG">
+      </div>
+      <div class="form-group" id="away-input">
+        <label>Away</label>
+        <input type="number" class="form-control" id="away" placeholder="Away team expected xG">
+      </div>
+      <button id="thebutton" type="button" class="h-25 btn btn-secondary text-center" onclick="submit_entry();">Click for match odds</button>
+    </div>
+
+    
+
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </body>
 </html>
@@ -58,10 +72,9 @@
     .then(function (response){
       response.json().then(function(data){
 
-        document.getElementById("home-output").innerHTML = "Home: "+ data.home;
-        document.getElementById("draw-output").innerHTML = "Draw: " + data.draw;
-        document.getElementById("away-output").innerHTML = "Away: " + data.away;
-
+        document.getElementById("home-output").innerHTML = "Home: "+ (data.home*100).toFixed(2)+"% calculated chance, "+(1/data.home).toFixed(2)+" decimal odds";
+        document.getElementById("draw-output").innerHTML = "Draw: " + (data.draw*100).toFixed(2)+"% calculated chance, "+(1/data.draw).toFixed(2)+" decimal odds";
+        document.getElementById("away-output").innerHTML = "Away: " + (data.away*100).toFixed(2)+"% calculated chance, "+(1/data.away).toFixed(2)+" decimal odds";
 
         console.log(data)
 
